@@ -1,0 +1,373 @@
+/* -------------RESETS------------- */
+/*Resets are used for overwriting default html tag properties/ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --clr-primary: #192f57;
+  --clr-secondary: #4668a5;
+  --clr-light: #ffffff;
+  --clr-dark: #2c3333;
+  --font: "Poppins", sans-serif;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+body {
+  color: var(--clr-dark);
+  font-family: var(--font);
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  line-height: 1.4;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section,
+time {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--clr-light);
+  font-weight: 500;
+  padding: 2rem;
+  position: relative;
+  z-index: 99;
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32rem;
+}
+
+.header__nav ul {
+  display: flex;
+  gap: 4rem;
+  font-size: 16px;
+  font-weight: 700;
+}
+.header__nav ul li a {
+  color: var(--clr-dark);
+}
+
+.header__nav ul li a:hover {
+  color: var(--clr-primary);
+  transition: 0.5s ease-in-out;
+}
+.toggle_menu {
+  display: none;
+}
+.toggle_menu span {
+  color: var(--clr-primary);
+  width: 3rem;
+  height: 0.3rem;
+  border: 2px solid var(--clr-primary);
+  border-radius: 1rem;
+}
+@media screen and (max-width: 520px) {
+
+  .header__wrapper{
+    gap: 15rem;
+  }
+  .header__wrapper a{
+    display: none;
+  }
+  .header {
+    position: fixed;
+    width: 100%;
+  }
+  .header__nav ul {
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    right: -100%;
+    z-index: 99;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+  }
+  .toggle_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .header__nav.open ul {
+    right: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .toggle_menu.open span:first-child {
+    transform: translate(0, 10px) rotate(225deg);
+    transition: 0.5s ease;
+  }
+  .toggle_menu.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .toggle_menu.open span:last-child {
+    transform: translate(0, -7.5px) rotate(-225deg);
+    transition: 0.5s ease;
+  }
+}
+.banner h1 {
+  color: var(--clr-primary);
+  position: absolute;
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: 8rem;
+  width: 50rem;
+}
+.btn {
+  color: var(--clr-light);
+  display: inline-block;
+  background-color: var(--clr-primary);
+  border: 2px solid;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.banner {
+  background-image: url(./IMG/home\ banner.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+@media screen and (max-width:520px) {
+    .banner__text{
+        width: ;
+    }
+    .banner h1{
+        margin-top: 13rem;
+        font-size: 32px;
+        width: 40rem;
+        margin-left: 3rem;
+    }
+    .banner{
+        height: 80rem;
+    }
+}
+.properties {
+  background-color: var(--clr-secondary);
+  padding: 5rem;
+}
+.properties__text {
+  color: var(--clr-light);
+  text-align: center;
+  padding: 3rem;
+}
+.properties__text h3 {
+  font-size: 30px;
+  font-weight: 700;
+}
+.properties__wrapper {
+  background-color: var(--clr-secondary);
+  display: flex;
+  gap: 3rem;
+}
+.cards {
+  background-color: var(--clr-light);
+
+}
+.cards h4{
+    font-size: 24px;
+    font-weight: 700;
+}
+.cardstext{
+    padding: 2rem;
+}
+.cards table{
+    margin-top: 3rem;
+    
+}
+.cards td{
+    padding-bottom: 1.5rem;
+}
+.cards img {
+  width: 100%;
+}
+.cards table a{
+    margin-right: 3rem;
+}
+.cards table h5{
+    font-weight: 700;
+}
+@media screen and (max-width:520px) {
+    .properties__wrapper{
+        flex-direction: column;
+    }
+    .cards table a{
+        font-size: 14px;
+    }
+}
+.section3__wrapper{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.section3__text{
+    margin: 3rem;
+    
+}
+.section3__text h2{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.section3__text a{
+    margin-top: 3rem;
+}
+@media screen and (max-width:520px) {
+    .section3__wrapper{
+    grid-template-columns: 1fr;
+    text-align: center;
+    }
+}
+.testimonials__wrapper{
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+}
+.testimonials__container{
+  background-color: var(--clr-dark);
+}
+.testimonials__text{
+    color: var(--clr-light);
+}
+.testimonials__text h1{
+    margin-top: 10rem;
+    font-size: 18px;
+    margin-bottom: 3rem;
+}
+.testimonials__text h2{
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 5rem;
+}
+.testimonials__text p{
+    margin-bottom: 5rem;
+}
+.testimonials__text h3{
+    font-size: 36px;
+    font-weight: 700;
+}
+@media screen and (max-width:520px) {
+    .testimonials__wrapper{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .testimonials__wrapper img{
+        margin-top: 5rem ;
+        margin-bottom: 5rem;
+    }
+}
+.footer{
+    background-color: var(--clr-primary);
+}
+.footer__text{
+    color: var(--clr-light);
+    padding: 3rem;
+}
+/* ASSETS */
